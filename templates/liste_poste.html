@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% csrf_token %}
+    <h1>Listes postes</h1>
+    <ul>
+        {% for poste in postes %}
+            <li>
+                poste : {{ poste.designation }}, id : {{ poste.id }}, rang : {{ poste.rang }}  <a href="{% url 'modify_poste' poste.id %}">Modifier</a> <a href="{% url 'delete_poste' poste.id %}">Supprimer</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

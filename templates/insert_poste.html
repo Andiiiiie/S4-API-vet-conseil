@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="{% url 'save_poste' %}" method="post">
+        {% csrf_token %}
+        <p>designation : <input type="text" name="designation"></p>
+        <input type="submit" value="Vote">
+    </form>
+</body>
+</html>
